@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
 <title>TelcoX | Connecting Your Future</title>
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -145,5 +146,25 @@
     <footer>
 <p>© 2025 TelcoX. Connecting Your Future.</p>
 </footer>
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DWU00000GGsG9',
+				'Agent_Web_Deployment',
+				'https://orgfarm-f60fcecee3.my.site.com/ESWAgentWebDeployment1729699014420',
+				{
+					scrt2URL: 'https://orgfarm-f60fcecee3.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://orgfarm-f60fcecee3.my.site.com/ESWAgentWebDeployment1729699014420/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
 </body>
 </html>
