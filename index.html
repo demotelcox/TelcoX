@@ -1,209 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
-    <title>Telcox | Seamless Connectivity</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+  <title>Telcox | Seamless Connectivity</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f0f8ff;
+      color: #333;
+    }
+
+    /* Header with wave background */
+    header {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: white;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      width: 200px;
+      height: auto;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      text-align: center;
+      color: white;
+      padding: 120px 20px;
+      background: linear-gradient(135deg, #00b4d8, #90e0ef);
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Wave effect */
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: url("https://www.svgrepo.com/show/353881/wave.svg") repeat-x;
+      animation: waveMove 6s infinite linear;
+    }
+
+    @keyframes waveMove {
+      from {
+        background-position: 0 0;
       }
-      body {
-        background-color: #f0f8ff;
-        color: #333;
-      } /* Header with wave background */
-      header {
-        background: linear-gradient(135deg, #0077b6, #00b4d8);
-        color: white;
-        padding: 0 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
+
+      to {
+        background-position: 1000px 0;
       }
-      .logo {
-        width: 200px;
-        height: auto;
-        font-size: 2rem;
-        font-weight: 700;
-      }
-      nav a {
-        margin-left: 20px;
-        color: white;
-        text-decoration: none;
-        font-weight: 500;
-      } /* Hero Section */
-      .hero {
-        position: relative;
-        text-align: center;
-        color: white;
-        padding: 120px 20px;
-        background: linear-gradient(135deg, #00b4d8, #90e0ef);
-        overflow: hidden;
-      }
-      .hero h1 {
-        font-size: 3rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      } /* Wave effect */
-      .wave {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 80px;
-        background: url("https://www.svgrepo.com/show/353881/wave.svg") repeat-x;
-        animation: waveMove 6s infinite linear;
-      }
-      @keyframes waveMove {
-        from {
-          background-position: 0 0;
-        }
-        to {
-          background-position: 1000px 0;
-        }
-      } /* Products Section */
-      .products {
-        display: flex;
-        justify-content: space-around;
-        margin: 3rem 0;
-        padding: 0 10%;
-      }
-      .product-card {
-        background-color: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        padding: 20px;
-        text-align: center;
-        width: 30%;
-        transition: transform 0.3s ease-in-out;
-        border-bottom: 5px solid #0077b6;
-      }
-      .product-card:hover {
-        transform: translateY(-10px);
-      }
-      .product-card img {
-        width: 80px;
-        margin-bottom: 10px;
-      }
-      .product-card h3 {
-        margin: 10px 0;
-        color: #0077b6;
-      } /* CTA Section */
-      .cta {
-        background: linear-gradient(135deg, #0077b6, #00b4d8);
-        color: white;
-        padding: 2rem;
-        text-align: center;
-        margin-top: 3rem;
-        border-radius: 8px;
-      }
-      .cta button {
-        padding: 10px 20px;
-        background-color: white;
-        color: #0077b6;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        font-weight: bold;
-        margin-top: 10px;
-      }
-      .cta button:hover {
-        background-color: #90e0ef;
-      } /* Footer */
-      footer {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 1rem 0;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200">
-            <!-- Gradient Definition -->
-            <defs>
-              <linearGradient id="blueToPurple" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#ffffff" />
-                <stop offset="100%" stop-color="#ffffff" />
-              </linearGradient>
-            </defs>
-            
-            <!-- Signal Icon -->
-          
-            <path d="M120 80 Q160 50, 200 80" stroke="url(#blueToPurple)" stroke-width="8" stroke-linecap="round" fill="none"/>
-            <path d="M120 100 Q160 70, 200 100" stroke="url(#blueToPurple)" stroke-width="8" stroke-linecap="round" fill="none"/>
-            <path d="M120 120 Q160 90, 200 120" stroke="url(#blueToPurple)" stroke-width="8" stroke-linecap="round" fill="none"/>
-            
-            <!-- Company Name -->
-            <text x="295" y="112" font-family="'Poppins', sans-serif" font-size="42" font-weight="600" text-anchor="middle" fill="url(#blueToPurple)">TelcoX</text>
-          </svg>
-      </div>
-      <nav>
-        <a href="#">Home</a> <a href="#">Products</a> <a href="#">Support</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
-    <section class="hero">
-      <h1>Stay Connected Like the Ocean – Limitless & Seamless</h1>
-      <div class="wave"></div>
-    </section>
-    <section class="products">
-      <div class="product-card">
-        <img src="https://img.icons8.com/ios-filled/100/tv.png" alt="TV Icon" />
-        <h3>TV Packages</h3>
-        <p>Get crystal-clear entertainment with HD and 4K channels.</p>
-      </div>
-      <div class="product-card">
-        <img
-          src="https://img.icons8.com/ios-filled/100/wifi.png"
-          alt="Internet Icon"
-        />
-        <h3>High-Speed Internet</h3>
-        <p>Wave-speed fiber-optic internet for uninterrupted browsing.</p>
-      </div>
-      <div class="product-card">
-        <img
-          src="https://img.icons8.com/ios-filled/100/phone.png"
-          alt="Phone Icon"
-        />
-        <h3>Mobile & Landline</h3>
-        <p>Reliable mobile plans and crystal-clear landline calls.</p>
-      </div>
-    </section>
-    <div class="cta">
-      <h2>Join the Wave of Connectivity</h2>
-      <p>Sign up today and dive into seamless digital experiences.</p>
-      <button>Get Started</button>
+    }
+
+    /* Products Section */
+    .products {
+      display: flex;
+      justify-content: space-around;
+      margin: 3rem 0;
+      padding: 0 10%;
+    }
+
+    .product-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      padding: 20px;
+      text-align: center;
+      width: 30%;
+      transition: transform 0.3s ease-in-out;
+      border-bottom: 5px solid #0077b6;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .product-card img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+      color: #0077b6;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+      border-radius: 8px;
+    }
+
+    .cta button {
+      padding: 10px 20px;
+      background-color: white;
+      color: #0077b6;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .cta button:hover {
+      background-color: #90e0ef;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    /*web to lead*/
+    .form{
+      background: linear-gradient(135deg, #00b4d8, #90e0ef);
+      padding: 120px 20px;
+    }
+
+    .form form{
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .form .form-input{
+      display:flex;
+      flex-direction: column;
+      width: 100%;
+      
+    }
+    .form .form-input label{
+      width: 100%;
+    }
+    .form .form-input input{
+      width: 100%;
+      height: 50px;
+      border-radius: 2px;
+      border: 0;
+      margin-bottom: 10px;
+    }
+    .form h1{
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"]{
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 200">
+        <!-- Gradient Definition -->
+        <defs>
+          <linearGradient id="blueToPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#ffffff" />
+          </linearGradient>
+        </defs>
+
+        <!-- Signal Icon -->
+
+        <path d="M120 80 Q160 50, 200 80" stroke="url(#blueToPurple)" stroke-width="8" stroke-linecap="round"
+          fill="none" />
+        <path d="M120 100 Q160 70, 200 100" stroke="url(#blueToPurple)" stroke-width="8" stroke-linecap="round"
+          fill="none" />
+        <path d="M120 120 Q160 90, 200 120" stroke="url(#blueToPurple)" stroke-width="8" stroke-linecap="round"
+          fill="none" />
+
+        <!-- Company Name -->
+        <text x="295" y="112" font-family="'Poppins', sans-serif" font-size="42" font-weight="600" text-anchor="middle"
+          fill="url(#blueToPurple)">TelcoX</text>
+      </svg>
     </div>
-     <script type='text/javascript'>
-        function initEmbeddedMessaging() {
-            try {
-                embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+    <nav>
+      <a href="#">Home</a> <a href="#">Products</a> <a href="#">Support</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1>Stay Connected Like the Ocean – Limitless & Seamless</h1>
+    <div class="wave"></div>
+  </section>
+  <section class="products">
+    <div class="product-card">
+      <img src="https://img.icons8.com/ios-filled/100/tv.png" alt="TV Icon" />
+      <h3>TV Packages</h3>
+      <p>Get crystal-clear entertainment with HD and 4K channels.</p>
+    </div>
+    <div class="product-card">
+      <img src="https://img.icons8.com/ios-filled/100/wifi.png" alt="Internet Icon" />
+      <h3>High-Speed Internet</h3>
+      <p>Wave-speed fiber-optic internet for uninterrupted browsing.</p>
+    </div>
+    <div class="product-card">
+      <img src="https://img.icons8.com/ios-filled/100/phone.png" alt="Phone Icon" />
+      <h3>Mobile & Landline</h3>
+      <p>Reliable mobile plans and crystal-clear landline calls.</p>
+    </div>
+  </section>
+  <section class="form">
 
-                embeddedservice_bootstrap.init(
-                    '00DWU00000GGsG9',
-                    'TelcoX',
-                    'https://orgfarm-f60fcecee3.my.site.com/ESWTelcoX1740417017702',
-                    {
-                        scrt2URL: 'https://orgfarm-f60fcecee3.my.salesforce-scrt.com'
-                    }
-                );
-            } catch (err) {
-                console.error('Error loading Embedded Messaging: ', err);
-            }
-        };
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
     </script>
-    <script type='text/javascript' src='https://orgfarm-f60fcecee3.my.site.com/ESWTelcoX1740417017702/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
-  </body>
+   
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DKd00000INq7J"
+      method="POST">
+        <input type=hidden name='captcha_settings'
+        value='{"keyname":"agentforcesdrnttdata","fallback":"true","orgId":"00DKd00000INq7J","ts":""}'>
+        <input type=hidden name="oid" value="00DKd00000INq7J">
+        <input type=hidden name="retURL" value="http://">
+        <h1>Contact us</h1>
+        <div class="form-input">
+          <label for="first_name">First Name</label>
+          <input id="first_name" maxlength="40" name="first_name" size="20"
+          type="text" />
+  
+        </div>
+        <div class="form-input">
+
+          <label for="last_name">Last Name</label>
+          <input id="last_name" maxlength="80" name="last_name" size="20"
+          type="text" />
+        </div>
+        <div class="form-input">
+          <label for="email">Email</label><input id="email" maxlength="80" name="email" size="20" type="text" />
+        </div>
+        <div class="form-input">
+          <label for="company">Company</label><input id="company" maxlength="40" name="company" size="20" type="text" />
+        </div>
+        <div class="form-input recaptcha">
+          <div class="g-recaptcha" data-sitekey="6LfDvgIrAAAAAFwREd4EliU19rngiGUn9tmX4v4m"></div><br>
+         
+        </div>
+        <div class="form-input">
+          <input type="submit" name="submit">
+        </div>
+    </form>
+
+  </section>
+  <div class="cta">
+    <h2>Join the Wave of Connectivity</h2>
+    <p>Sign up today and dive into seamless digital experiences.</p>
+    <button>Get Started</button>
+  </div>
+  <script type='text/javascript'>
+    function initEmbeddedMessaging() {
+      try {
+        embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+        embeddedservice_bootstrap.init(
+          '00DWU00000GGsG9',
+          'TelcoX',
+          'https://orgfarm-f60fcecee3.my.site.com/ESWTelcoX1740417017702',
+          {
+            scrt2URL: 'https://orgfarm-f60fcecee3.my.salesforce-scrt.com'
+          }
+        );
+      } catch (err) {
+        console.error('Error loading Embedded Messaging: ', err);
+      }
+    };
+  </script>
+  <script type='text/javascript'
+    src='https://orgfarm-f60fcecee3.my.site.com/ESWTelcoX1740417017702/assets/js/bootstrap.min.js'
+    onload='initEmbeddedMessaging()'></script>
+
+</body>
+
 </html>
